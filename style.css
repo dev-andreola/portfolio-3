@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 * {
   margin: 0;
@@ -22,6 +26,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  animation: fade-in 3s ease-out;
 }
 
 @media (max-width: 522px){
@@ -41,8 +47,8 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  filter: brightness(-50px);
-  animation: fade-in 3s ease-out;
+  filter: brightness(0.5);
+  filter: blur(10px);
 }
 
 .banner .content {
@@ -68,7 +74,7 @@ body {
 .banner .content hr {
   text-align: center;
   width: 100%;
-  animation: fade-in 3s 4s ease-out backwards;
+  animation: width 3s 4s ease-out both;
 }
 
 .banner .content h2 {
@@ -84,6 +90,148 @@ body {
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   animation: fade-in 3s 5s ease-out backwards;
 }
+
+
+/* SOBRE MIM */
+
+.aboutme {
+  padding: 3em 15em;
+}
+
+@media (max-width: 1000px) {
+  .aboutme {
+    padding: 1em 1em;
+  }
+}
+
+
+.card {
+  animation: fade-in 1s 6s ease-out backwards;
+  border-radius: 20px;
+  background-color: #cfcfcf;
+  padding: 1em 2em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.card h3 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1em;
+  place-items: center;
+}
+
+@media (max-width: 1000px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card-left {
+    padding: 0;
+  }
+}
+
+.card-left {
+  width: 100%;
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 522px) {
+  .card-left {
+    padding: 1em 0 0 0;
+  }
+}
+
+.card-left .img {
+  position: relative;
+  width: calc(92px*2.5);
+  height: calc(128px*2.5);
+  background-image: url(assets/selfie.jpeg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+@media (max-width: 800px) {
+  .card-left .img {
+    width: calc(92px*1.5);
+    height: calc(128px*1.5);    
+  }
+}
+
+.card-right {
+  width: 100%;
+  padding: 1em 2em 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .card-right {
+    padding: 1em 0;
+  }
+}
+
+.card-right p {
+  font-weight: 300;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+
+.card-right ul {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+@media (max-width: 1000px) {
+  .card-right ul {
+    justify-content: center;
+    gap: 2em;
+  }
+}
+
+.card-right li {
+  cursor: pointer;
+}
+
+.card-right ion-icon {
+  transition: 0.3s;
+}
+
+.card-right li:hover ion-icon {
+  color: #24476e;
+  transform: scale(1.4);
+  
+}
+
+
+
+
+
+
+
+
+
 
 @keyframes fade-in {
   from {
@@ -104,6 +252,20 @@ body {
     transform: skewY(0deg);
   }
 }
+
+@keyframes width {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    opacity: .5;
+    transform: scaleX(1);
+  }
+}
+
+
+
 
 
 
